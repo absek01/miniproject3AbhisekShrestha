@@ -83,3 +83,27 @@ def dashboard():
     posts = Post.query.filter_by(user_id=session['user_id']).all()
     return render_template('dashboard.html', posts=posts)
 
+# Route for creating a new post, requires GET (view form) and POST (submit form)
+@app.route('/new_post', methods=['GET', 'POST'])
+def new_post():
+    if 'user_id' not in session:
+        flash('Please log in first!', 'warning')
+        return redirect(url_for('login'))
+    if request.method == 'POST':
+        title = request.form['title']
+        content = request.form['content']
+        post = Post(title=title, content=content, user_id=session['user_id'])
+        db.session.add(post)
+        db.session.commit()
+        flash('Post created!', 'success')
+        return redirect(url_for('dashboard'))
+    return render_template('new_post.html')
+
+# Create all database tables before the first request
+@app.before_first_request
+def create_tables():
+    db.create_all()
+
+# Start the Flask application (debug mode on for development purposes)
+if __name__ == '__main__':
+    app.run(debug=True)
