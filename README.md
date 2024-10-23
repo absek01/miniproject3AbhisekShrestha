@@ -10,11 +10,6 @@ This is a Flask web app that allows users to register, login, and create posts. 
 
 Please run the following:
 ```
-bash
-```
-
-
-```
 pip install -r requirements.txt
 ```
 ## Execution of program

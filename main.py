@@ -1,4 +1,4 @@
-# app.py
+# main.py
 """
 Author: Abhisek Shrestha
 """
@@ -8,7 +8,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash, ses
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_bootstrap import Bootstrap
-import os
+
 
 # Initialize the Flask application
 app = Flask(__name__)
@@ -100,7 +100,7 @@ def new_post():
     return render_template('new_post.html')
 
 # Create all database tables before the first request
-@app.before_first_request
+@app.before_request
 def create_tables():
     db.create_all()
 
