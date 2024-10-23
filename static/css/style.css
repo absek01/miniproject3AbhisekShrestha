@@ -1,0 +1,18 @@
+/* static/css/style.css */
+body {
+    padding-top: 56px;
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.jumbotron {
+    background-color: #e9ecef;
+    padding: 2rem;
+    border-radius: .3rem;
+}

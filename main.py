@@ -1,6 +1,8 @@
 # main.py
 """
-Author: Abhisek Shrestha
+miniproject3AbhisekShrestha
+INF601 - Advanced Programming in Python
+Abhisek Shrestha
 """
 
 # Import of all required packages
