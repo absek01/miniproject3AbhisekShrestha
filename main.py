@@ -39,7 +39,7 @@ class Post(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
 # Route for the home page
-@app.route('/')
+@app.route('/home')
 def home():
     return render_template('home.html')
 
